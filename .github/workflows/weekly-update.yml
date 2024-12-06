@@ -1,0 +1,21 @@
+name: Weekly Updates
+
+on:
+  schedule:
+    - cron: '0 2 * * 4' # Every Thursday at 2:00 AM UTC
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Run update script
+        run: |
+          node update.js
