@@ -5,12 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crypto Wallet Tracker</title>
-  <script src="app.js" defer></script>
+  <script src="app.js" type="module" defer></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
   <h1>Crypto Wallet Tracker</h1>
   <input id="wallet-input" type="text" placeholder="Enter wallet address" />
   <button id="add-wallet">Add Wallet</button>
-  <ul id="wallet-list"></ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Wallet Address</th>
+        <th>Thena Locked Balance</th>
+        <th>Unlock Date</th>
+        <th>Expected Rewards ($)</th>
+        <th>$ per 1,000 Votes</th>
+      </tr>
+    </thead>
+    <tbody id="wallet-table-body">
+      <!-- Rows will be dynamically added here -->
+    </tbody>
+  </table>
 </body>
 </html>
